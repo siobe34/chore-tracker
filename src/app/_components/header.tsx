@@ -1,0 +1,45 @@
+import Link from "next/link";
+
+import { SITE_NAV_LINKS } from "@/lib/constants/navigation-links";
+import { cn } from "@/lib/utils";
+import { MobileMenuButton } from "@/app/_components/mobile-menu-button";
+import { ThemeToggler } from "@/app/_components/theme-toggler";
+
+export const Header = () => {
+  return (
+    <header className="relative z-50 flex items-center justify-between gap-8 bg-primary py-2 text-primary-foreground">
+      <div className="pl-4">
+        <Link href={SITE_NAV_LINKS.home.path}>Logo</Link>
+      </div>
+      <MobileMenuButton className="peer pr-4 text-xl sm:hidden" />
+      <div
+        className={cn(
+          "border-border bg-background text-foreground",
+          "absolute top-full grid w-full",
+          "grid-rows-[0fr] peer-[.active]:grid-rows-[1fr] peer-[.active]:border-b-2",
+          "transition-[grid-template-rows] duration-300 ease-out",
+          "sm:static sm:w-auto sm:grid-rows-1 sm:border-none sm:bg-inherit sm:pr-4 sm:text-inherit",
+        )}
+      >
+        <div className="overflow-hidden">
+          <ul className="flex flex-col sm:flex-row sm:gap-6">
+            {Object.values(SITE_NAV_LINKS).map(
+              (route) =>
+                route.display && (
+                  <li
+                    key={route.path}
+                    className="flex flex-col items-center justify-center border-b border-border py-2 text-center sm:border-none sm:p-0 sm:after:h-[1px] sm:after:w-0 sm:after:bg-primary-foreground sm:after:transition-all hover:sm:after:w-full"
+                  >
+                    <Link href={route.path}>{route.name}</Link>
+                  </li>
+                ),
+            )}
+            <li className="flex flex-col items-center justify-center border-b border-border py-2 text-center sm:border-none sm:p-0">
+              <ThemeToggler />
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+  );
+};
