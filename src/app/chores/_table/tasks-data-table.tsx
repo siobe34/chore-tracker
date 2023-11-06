@@ -21,6 +21,7 @@ import {
   type SortingState,
 } from '@tanstack/react-table';
 import { useState } from 'react';
+import { TasksDataTableToolbar } from './tasks-data-table-toolbar';
 
 interface TasksDataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -54,6 +55,7 @@ export const TasksDataTable = <TData, TValue>({
 
   return (
     <div className='w-full space-y-4'>
+      <TasksDataTableToolbar table={table} users={users} />
       <div className='rounded-md border'>
         <Table>
           <TableHeader>
