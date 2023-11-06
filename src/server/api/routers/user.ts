@@ -3,15 +3,13 @@ import { createUserSchema, updateUserSchema } from '@/types/user';
 import { z } from 'zod';
 
 export const userRouter = createTRPCRouter({
-  create: publicProcedure
-    .input(createUserSchema)
-    .mutation(async ({ ctx, input }) => {
-      return ctx.db.user.create({
-        data: {
-          name: input.name,
-        },
-      });
-    }),
+  create: publicProcedure.input(createUserSchema).mutation(({ ctx, input }) => {
+    return ctx.db.user.create({
+      data: {
+        name: input.name,
+      },
+    });
+  }),
   update: publicProcedure
     .input(updateUserSchema)
     .mutation(async ({ ctx, input }) => {
