@@ -6,6 +6,7 @@ services:
     image: chore-tracker-v1
     restart: always
     working_dir: /app
+    platform: 'linux/amd64'
     build:
       context: .
       dockerfile: Dockerfile
@@ -14,4 +15,4 @@ services:
     ports:
       - '3001:3000'
     environment:
-      - DATABASE_URL=some_url
+      - DATABASE_URL=your_db_url_here

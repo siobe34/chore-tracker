@@ -1,4 +1,5 @@
-FROM node:18-alpine AS base
+##### BASE
+FROM --platform=linux/amd64 node:16-alpine3.17 AS base
 
 ##### DEPENDENCIES
 
@@ -30,6 +31,7 @@ COPY . .
 
 # ENV NEXT_TELEMETRY_DISABLED 1
 
+# Run prisma generate followed by npm build
 RUN \
 if [ -f yarn.lock ]; then SKIP_ENV_VALIDATION=1 yarn build; \
 elif [ -f package-lock.json ]; then npm run postinstall && SKIP_ENV_VALIDATION=1 npm run build; \
@@ -59,5 +61,6 @@ COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 USER nextjs
 EXPOSE 3000
 ENV PORT 3000
+ENV HOSTNAME "0.0.0.0"
 
 CMD ["node", "server.js"]
