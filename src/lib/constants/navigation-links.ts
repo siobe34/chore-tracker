@@ -1,12 +1,17 @@
 export const SITE_NAV_LINKS = {
   home: {
-    name: "Chores",
-    path: "/",
+    name: 'Home',
+    path: '/',
+    display: false,
+  },
+  chores: {
+    name: 'Chores',
+    path: '/chores',
     display: true,
   },
-  about: {
-    name: "Users",
-    path: "/users",
+  users: {
+    name: 'Users',
+    path: '/users',
     display: true,
   },
 };
