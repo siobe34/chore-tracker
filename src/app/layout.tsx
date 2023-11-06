@@ -4,7 +4,7 @@ import { Toaster } from '@/app/_components/ui/toaster';
 import { cn } from '@/lib/utils';
 import '@/styles/globals.css';
 import { TRPCReactProvider } from '@/trpc/react';
-import { Inter } from 'next/font/google';
+import { type Metadata } from 'next';
 import { headers } from 'next/headers';
 import { ThemeProvider } from './_components/theme-provider';
 
@@ -13,10 +13,10 @@ const inter = Inter({
   variable: '--font-sans',
 });
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Chore Tracker | KJIR',
   description: 'Manage chores within your home.',
-  icons: [{ rel: 'icon', url: '/favicon.ico' }],
+  manifest: '/site.webmanifest',
 };
 
 export default function RootLayout({
