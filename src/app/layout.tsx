@@ -1,13 +1,12 @@
-import "@/styles/globals.css";
-
-import { Inter } from "next/font/google";
-import { headers } from "next/headers";
-
-import { TRPCReactProvider } from "@/trpc/react";
-
-import { Header } from "@/app/_components/header";
-import { ScrollToTop } from "@/app/_components/scroll-to-top";
-import { cn } from "@/lib/utils";
+import { Header } from '@/app/_components/header';
+import { ScrollToTop } from '@/app/_components/scroll-to-top';
+import { Toaster } from '@/app/_components/ui/toaster';
+import { cn } from '@/lib/utils';
+import '@/styles/globals.css';
+import { TRPCReactProvider } from '@/trpc/react';
+import { Inter } from 'next/font/google';
+import { headers } from 'next/headers';
+import { ThemeProvider } from './_components/theme-provider';
 
 const inter = Inter({
   subsets: ["latin"],
@@ -33,9 +32,10 @@ export default function RootLayout({
           inter.variable,
         )}
       >
-        <Header />
-        <TRPCReactProvider headers={headers()}>{children}</TRPCReactProvider>
-        <ScrollToTop />
+          <Header />
+          <TRPCReactProvider headers={headers()}>{children}</TRPCReactProvider>
+          <ScrollToTop />
+          <Toaster />
       </body>
     </html>
   );
