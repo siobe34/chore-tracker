@@ -1,0 +1,10 @@
+version: '3.4'
+
+services:
+  chore-tracker:
+    image: chore-tracker-v1
+    restart: always
+    build:
+      dockerfile: Dockerfile
+    ports:
+      - 3001:3001
