@@ -25,17 +25,24 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang='en' suppressHydrationWarning>
       <body
         className={cn(
-          "grid min-h-screen grid-cols-1 grid-rows-[6rem_1fr] bg-background font-sans text-foreground",
-          inter.variable,
+          'grid min-h-screen grid-cols-1 grid-rows-[6rem_1fr] gap-4 bg-background font-sans text-foreground',
+          inter.variable
         )}
       >
+        <ThemeProvider
+          attribute='class'
+          defaultTheme='system'
+          enableSystem
+          disableTransitionOnChange
+        >
           <Header />
           <TRPCReactProvider headers={headers()}>{children}</TRPCReactProvider>
           <ScrollToTop />
           <Toaster />
+        </ThemeProvider>
       </body>
     </html>
   );
