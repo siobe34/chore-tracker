@@ -32,43 +32,48 @@ export const TasksDataTableToolbar = <TData,>({
           table.getColumn('description')?.setFilterValue(event.target.value)
         }
       />
-      <div className='flex items-center rounded-md border text-sm'>
-        <span className='px-2'>Filter By</span>
-        <Separator orientation='vertical' className='mx-2 h-4 w-[1px] border' />
-        {table.getColumn('status') && (
-          <DataTableToolbarFilter
-            className='border-none'
-            column={table.getColumn('status')}
-            title='Status'
-            options={statusOptions}
-            showFilterSearch={false}
+      <div className='flex items-center space-x-4'>
+        <div className='flex items-center rounded-md border text-sm'>
+          <span className='px-2'>Filter By</span>
+          <Separator
+            orientation='vertical'
+            className='mx-2 h-4 w-[1px] border'
           />
-        )}
-        {table.getColumn('assignedTo') && (
-          <DataTableToolbarFilter
-            className='border-none'
-            column={table.getColumn('assignedTo')}
-            title='User'
-            options={users.map((user) => ({
-              value: user.name,
-              label: user.name,
-              icon: UserCircle2,
-            }))}
-            showFilterSearch={false}
-          />
-        )}
-        {isFiltered && (
-          <Button
-            variant='ghost'
-            onClick={() => table.resetColumnFilters()}
-            className='h-8 px-2 lg:px-3'
-          >
-            Reset
-            <X className='pl-2' />
-          </Button>
-        )}
+          {table.getColumn('status') && (
+            <DataTableToolbarFilter
+              className='border-none'
+              column={table.getColumn('status')}
+              title='Status'
+              options={statusOptions}
+              showFilterSearch={false}
+            />
+          )}
+          {table.getColumn('assignedTo') && (
+            <DataTableToolbarFilter
+              className='border-none'
+              column={table.getColumn('assignedTo')}
+              title='User'
+              options={users.map((user) => ({
+                value: user.name,
+                label: user.name,
+                icon: UserCircle2,
+              }))}
+              showFilterSearch={false}
+            />
+          )}
+          {isFiltered && (
+            <Button
+              variant='ghost'
+              onClick={() => table.resetColumnFilters()}
+              className='h-8 px-2 lg:px-3'
+            >
+              Reset
+              <X className='pl-2' />
+            </Button>
+          )}
+        </div>
+        <DataTableViewCols table={table} />
       </div>
-      <DataTableViewCols table={table} />
     </div>
   );
 };
