@@ -5,10 +5,11 @@ import { cn } from '@/lib/utils';
 import '@/styles/globals.css';
 import { TRPCReactProvider } from '@/trpc/react';
 import { type Metadata } from 'next';
+import { Maven_Pro } from 'next/font/google';
 import { headers } from 'next/headers';
 import { ThemeProvider } from './_components/theme-provider';
 
-const inter = Inter({
+const mavenPro = Maven_Pro({
   subsets: ['latin'],
   variable: '--font-sans',
 });
@@ -29,7 +30,7 @@ export default function RootLayout({
       <body
         className={cn(
           'grid min-h-screen grid-cols-1 grid-rows-[6rem_1fr] gap-4 bg-background font-sans text-foreground',
-          inter.variable
+          mavenPro.variable
         )}
       >
         <ThemeProvider
