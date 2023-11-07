@@ -9,6 +9,11 @@ export const SITE_NAV_LINKS = {
     path: '/chores',
     display: true,
   },
+  archive: {
+    name: 'Completed',
+    path: '/chores/complete',
+    display: true,
+  },
   users: {
     name: 'Users',
     path: '/users',
