@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 export const Header = () => {
   return (
-    <header className='relative z-50 flex items-center justify-between gap-8 bg-primary bg-gradient-to-b from-[hsl(300,85%,85%)] from-10% to-primary to-50% py-2 text-primary-foreground dark:from-[hsl(300,18%,38%)]'>
+    <header className='relative z-50 flex items-center justify-between gap-8 bg-primary bg-gradient-to-b from-[hsl(351,49%,85%)] from-0% to-primary to-80% py-2 text-primary-foreground dark:from-[hsl(352,10%,50%)]'>
       <div className='pl-4'>
         <Link href={SITE_NAV_LINKS.home.path}>Chore Tracker</Link>
       </div>
