@@ -24,7 +24,10 @@ export const ViewUser = forwardRef<
           <DialogTitle>User details</DialogTitle>
         </DialogHeader>
         <div className='flex flex-col sm:grid sm:grid-cols-4 sm:items-center sm:gap-4'>
-          <Label htmlFor='description' className='sm:text-right'>
+          <Label
+            htmlFor='description'
+            className='pb-1 leading-relaxed sm:pb-0 sm:text-right'
+          >
             Name
           </Label>
           <span
@@ -35,7 +38,10 @@ export const ViewUser = forwardRef<
           </span>
         </div>
         <div className='flex flex-col sm:grid sm:grid-cols-4 sm:items-center sm:gap-4'>
-          <Label htmlFor='created-at' className='sm:text-right'>
+          <Label
+            htmlFor='created-at'
+            className='pb-1 leading-relaxed sm:pb-0 sm:text-right'
+          >
             Created
           </Label>
           <span
@@ -46,7 +52,10 @@ export const ViewUser = forwardRef<
           </span>
         </div>
         <div className='flex flex-col sm:grid sm:grid-cols-4 sm:items-center sm:gap-4'>
-          <Label htmlFor='updated-at' className='sm:text-right'>
+          <Label
+            htmlFor='updated-at'
+            className='pb-1 leading-relaxed sm:pb-0 sm:text-right'
+          >
             Last Modified
           </Label>
           <span

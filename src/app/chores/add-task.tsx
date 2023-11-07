@@ -132,7 +132,10 @@ export const AddTask = ({
             </DialogDescription>
           </DialogHeader>
           <div className='flex flex-col sm:grid sm:grid-cols-4 sm:items-center sm:gap-4'>
-            <Label htmlFor='description' className='sm:text-right'>
+            <Label
+              htmlFor='description'
+              className='pb-1 leading-relaxed sm:pb-0 sm:text-right'
+            >
               Description
             </Label>
             <Input
@@ -149,7 +152,10 @@ export const AddTask = ({
             />
           </div>
           <div className='flex flex-col sm:grid sm:grid-cols-4 sm:items-center sm:gap-4'>
-            <Label htmlFor='user' className='sm:text-right'>
+            <Label
+              htmlFor='user'
+              className='pb-1 leading-relaxed sm:pb-0 sm:text-right'
+            >
               User
             </Label>
             <Select
@@ -180,7 +186,10 @@ export const AddTask = ({
             </Select>
           </div>
           <div className='flex flex-col sm:grid sm:grid-cols-4 sm:items-center sm:gap-4'>
-            <Label htmlFor='status' className='sm:text-right'>
+            <Label
+              htmlFor='status'
+              className='pb-1 leading-relaxed sm:pb-0 sm:text-right'
+            >
               Status
             </Label>
             <Select
@@ -214,7 +223,10 @@ export const AddTask = ({
             </Select>
           </div>
           <div className='flex flex-col sm:grid sm:grid-cols-4 sm:items-center sm:gap-4'>
-            <Label htmlFor='complete-by' className='sm:text-right'>
+            <Label
+              htmlFor='complete-by'
+              className='pb-1 leading-relaxed sm:pb-0 sm:text-right'
+            >
               Complete By
             </Label>
             <DatePicker

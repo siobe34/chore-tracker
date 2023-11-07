@@ -91,7 +91,10 @@ export const EditUser = forwardRef<
             <DialogTitle>Edit user</DialogTitle>
           </DialogHeader>
           <div className='flex flex-col sm:grid sm:grid-cols-4 sm:items-center sm:gap-4'>
-            <Label htmlFor='name' className='sm:text-right'>
+            <Label
+              htmlFor='name'
+              className='pb-1 leading-relaxed sm:pb-0 sm:text-right'
+            >
               Name
             </Label>
             <Input
