@@ -10,6 +10,7 @@ import { TasksDataTableActions } from './tasks-data-table-actions';
 export const TasksDataTableCols: ColumnDef<TQueryTask>[] = [
   {
     id: 'markComplete',
+    header: () => <div className='sr-only'>Complete Task</div>,
     cell: ({ row }) => <CompleteTask rowData={row.original} />,
   },
   {

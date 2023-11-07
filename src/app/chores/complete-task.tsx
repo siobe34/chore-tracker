@@ -43,6 +43,7 @@ export const CompleteTask = ({ rowData }: { rowData: TQueryTask }) => {
 
   return (
     <Checkbox
+      aria-label='Mark Task Complete'
       checked={rowData.status === 'COMPLETE'}
       onCheckedChange={handleCheckboxEvent}
     />
