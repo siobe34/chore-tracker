@@ -46,6 +46,24 @@ export const taskRouter = createTRPCRouter({
         };
       }
     }),
+  getByStatus: publicProcedure
+    .input(
+      z.object({
+        status: z.array(z.enum(['NOTSTARTED', 'INPROGRESS', 'COMPLETE'])),
+      }),
+    )
+    .query(async ({ ctx, input }) => {
+      // * Query tasks by status and include the name of the user related to the task
+      const tasks = await ctx.db.task.findMany({
+        where: { status: { in: input.status } },
+        include: { assignedTo: { select: { name: true } } },
+      });
+
+      return tasks.map((task) => ({
+        ...task,
+        assignedTo: task.assignedTo.name,
+      }));
+    }),
   getAll: publicProcedure.query(async ({ ctx }) => {
     // * Query all tasks and include the name of the user related to the task
     const tasks = await ctx.db.task.findMany({
