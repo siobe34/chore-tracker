@@ -105,7 +105,7 @@ export const EditTask = forwardRef<
           title: <AlertCircle />,
           description: error.message,
           variant: 'destructive',
-        })
+        }),
       );
     }
 
@@ -204,7 +204,7 @@ export const EditTask = forwardRef<
                       >
                         {readableStatus}
                       </SelectItem>
-                    )
+                    ),
                   )}
                 </SelectGroup>
               </SelectContent>

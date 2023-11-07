@@ -72,7 +72,7 @@ export const AddUser = ({ className }: { className?: string }) => {
           title: <AlertCircle />,
           description: error.message,
           variant: 'destructive',
-        })
+        }),
       );
     }
 

@@ -104,7 +104,7 @@ export const AddTask = ({
           title: <AlertCircle />,
           description: error.message,
           variant: 'destructive',
-        })
+        }),
       );
     }
 
@@ -207,7 +207,7 @@ export const AddTask = ({
                       >
                         {readableStatus}
                       </SelectItem>
-                    )
+                    ),
                   )}
                 </SelectGroup>
               </SelectContent>

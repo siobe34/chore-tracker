@@ -34,7 +34,7 @@ const DatePicker = forwardRef<HTMLButtonElement, DatePickerProps>(
             className={cn(
               'w-[240px] justify-start text-left font-normal',
               !date && 'text-muted-foreground',
-              className
+              className,
             )}
           >
             <CalendarIcon className='mr-2 h-4 w-4' />
@@ -52,7 +52,7 @@ const DatePicker = forwardRef<HTMLButtonElement, DatePickerProps>(
         </PopoverContent>
       </Popover>
     );
-  }
+  },
 );
 DatePicker.displayName = 'DatePicker';
 

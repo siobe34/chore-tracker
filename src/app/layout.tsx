@@ -30,7 +30,7 @@ export default function RootLayout({
       <body
         className={cn(
           'grid min-h-screen grid-cols-1 grid-rows-[6rem_1fr] gap-4 bg-background font-sans text-foreground',
-          mavenPro.variable
+          mavenPro.variable,
         )}
       >
         <ThemeProvider

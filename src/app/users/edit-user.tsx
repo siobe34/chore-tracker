@@ -72,7 +72,7 @@ export const EditUser = forwardRef<
           title: <AlertCircle />,
           description: error.message,
           variant: 'destructive',
-        })
+        }),
       );
     }
 
