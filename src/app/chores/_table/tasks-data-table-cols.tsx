@@ -4,9 +4,14 @@ import { readableStatusEnum } from '@/lib/mapStatusEnum';
 import { type TQueryTask } from '@/types/task';
 import { type ColumnDef } from '@tanstack/react-table';
 import { format } from 'date-fns';
+import { CompleteTask } from '../complete-task';
 import { TasksDataTableActions } from './tasks-data-table-actions';
 
 export const TasksDataTableCols: ColumnDef<TQueryTask>[] = [
+  {
+    id: 'markComplete',
+    cell: ({ row }) => <CompleteTask rowData={row.original} />,
+  },
   {
     accessorKey: 'description',
     header: ({ column }) => (
