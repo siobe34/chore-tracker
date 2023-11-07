@@ -5,7 +5,9 @@ import { AddTask } from './add-task';
 
 export default async function Chores() {
   const users = await api.user.getAll.query();
-  const tasks = await api.task.getAll.query();
+  const tasks = await api.task.getByStatus.query({
+    status: ['NOTSTARTED', 'INPROGRESS'],
+  });
 
   return (
     <main className='container flex h-full flex-col items-center gap-4 py-10'>
