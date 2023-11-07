@@ -5,7 +5,7 @@ export const SITE_NAV_LINKS = {
     display: false,
   },
   chores: {
-    name: 'Chores',
+    name: 'Chores To-do',
     path: '/chores',
     display: true,
   },
@@ -15,7 +15,7 @@ export const SITE_NAV_LINKS = {
     display: true,
   },
   users: {
-    name: 'Users',
+    name: 'Manage Users',
     path: '/users',
     display: true,
   },
