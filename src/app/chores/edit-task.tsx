@@ -118,11 +118,7 @@ export const EditTask = forwardRef<
   return (
     <Dialog>
       <DialogTrigger ref={ref} className='hidden' />
-      <form
-        id={formId}
-        className='grid gap-4 py-4'
-        onSubmit={handleFormSubmission}
-      >
+      <form id={formId} className='hidden' onSubmit={handleFormSubmission}>
         <DialogContent className='sm:max-w-[425px]'>
           <DialogHeader>
             <DialogTitle>Edit chore</DialogTitle>
